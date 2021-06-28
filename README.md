@@ -48,7 +48,7 @@ The dynamoget command supports the following command options:
 
 Example:
 
-> index=dynamo email_address=* | dynamoget region="us-east-1" input="us_east_1_health_id" table="health_id" query="table.query(IndexName = \"email-index\",KeyConditionExpression = Key(\"email\").eq(\"adalton@test.com\"))" source_field="email_address" dynamo_match_field="email" | table email_address, DYNAMO*
+> index=dynamo email_address=* | dynamoget region="us-east-1" input="us_east_1_health_id" table="health_id" query="table.query(IndexName = \"email-index\",KeyConditionExpression = Key(\\"email\\").eq(\\"adalton@test.com\\"))" source_field="email_address" dynamo_match_field="email" | table email_address, DYNAMO*
 
 In the above example we are searching for events containing an email_address field in the dynamo index. Results are then piped to the dynamoget command. The dynamoget command will run the query specified in the "query" field and attempt to match the contents from the "source" field with the "dynamo_match_field" contents. If there is a match the dynamo fields for the match will be added to the original event with the prefix DYNAMO_ . In addition the DYNAMO_MATCH field will be set to "true". If no match is found, the DYNAMO_MATCH field will be set to "false" and no further fields will be added.
 
