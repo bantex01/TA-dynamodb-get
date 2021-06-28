@@ -56,6 +56,8 @@ Example output can be seen below:
 
 ![alt text](https://github.com/bantex01/TA-dynamodb-get/blob/main/README/dynamoget_output.png?raw=true)
 
+In the above example, only one match was found, hence 9 of the 10 events are not enriched with any DynamoDB data and DYNAMO_MATCH is set to "false".
+
 ### Accessing the DynamoDB table from the dynamoget command
 
 In order to query DynamoDB the dynamoget command requires AWS credentials. The "input" field tells the command what configured input to use to gather the credentials required.
