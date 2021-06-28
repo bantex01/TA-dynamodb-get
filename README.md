@@ -36,3 +36,4 @@ You can only use simple scan strins with a filter expression currently.
 Example:
 > table.scan(FilterExpression=Attr(<ATTR_NAME>).eq(<QUERY_STRING>))
 
+## dynamoget Streaming Command Usage
