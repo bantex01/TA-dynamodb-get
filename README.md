@@ -54,7 +54,7 @@ In the above example we are searching for events containing an email_address fie
 
 Example output can be seen below:
 
-<kbd>![alt text](https://github.com/bantex01/TA-dynamodb-get/blob/main/README/dynamoget_output.png?raw=true)<!kbd>
+<kbd>![alt text](https://github.com/bantex01/TA-dynamodb-get/blob/main/README/dynamoget_output.png?raw=true)</kbd>
 
 In the above example, only one match was found, hence 9 of the 10 events are not enriched with any DynamoDB data and DYNAMO_MATCH is set to "false".
 
