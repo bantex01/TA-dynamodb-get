@@ -38,5 +38,5 @@ Example:
 
 ## dynamoget Streaming Command Usage
 
-![alt text](https://github.com/bante01/TA-dynamodb-get/README/blob/main/dynamoget_output.png?raw=true)
+![alt text](https://github.com/bantex01/TA-dynamodb-get/blob/main/README/dynamoget_output.png?raw=true)
 
