@@ -37,3 +37,6 @@ Example:
 > table.scan(FilterExpression=Attr(<ATTR_NAME>).eq(<QUERY_STRING>))
 
 ## dynamoget Streaming Command Usage
+
+![alt text](https://github.com/bante01/TA-dynamodb-get/README/blob/main/dynamoget_output.png?raw=true)
+
