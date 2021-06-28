@@ -22,9 +22,17 @@ Configuration of the dynamodb_get input type includes the following attributes:
 
 At time of writing, the input only supports basic scan and query strings. For more details and some examples [see - AWS Developer Guide]( https://docs.amazonaws.cn/en_us/amazondynamodb/latest/developerguide/GettingStarted.PHP.04.html)
 
-### Scan Example
+### Query Example
 
-You can only use simple Key scans to search for data currently.
+You can only use simple Key queries to search for data currently.
 
 Example:
 > table.query(IndexName = <INDEX_NAME>,KeyConditionExpression = Key(<KEY_NAME>).eq(<QUERY_STRING>))
+
+### Scan Example
+
+You can only use simple scan strins with a filter expression currently.
+
+Example:
+> table.scan(FilterExpression=Attr(<ATTR_NAME>).eq(<QUERY_STRING>))
+
