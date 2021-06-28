@@ -18,6 +18,8 @@ Configuration of the dynamodb_get input type includes the following attributes:
 - DynamoDB Table Name - The name of the DynamoDB table you wish to query
 - Table Query String - The full string to use to query the table - for further details see the "Querying" section below
 
+<kbd>![alt text](https://github.com/bantex01/TA-dynamodb-get/blob/main/README/dynamodb_get_input_config.png?raw=true)</kbd>
+
 ### Querying
 
 At time of writing, the input only supports basic scan and query strings. For more details and some examples [see - AWS Developer Guide]( https://docs.amazonaws.cn/en_us/amazondynamodb/latest/developerguide/GettingStarted.PHP.04.html)
