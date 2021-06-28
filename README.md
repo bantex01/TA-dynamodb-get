@@ -50,9 +50,14 @@ Example:
 
 > index=dynamo email_address=* | dynamoget region="us-east-1" input="us_east_1_health_id" table="health_id" query="table.query(IndexName = \"email-index\",KeyConditionExpression = Key(\"email\").eq(\"adalton@test.com\"))" source_field="email_address" dynamo_match_field="email" | table email_address, DYNAMO*
 
-We are searching for events containing an email_address field in the dynamo index. We then pipe that output to the dynamoget command. The custom command will run the query specified in the "query" field and attempt to match the contents from the "source" field with the "dynamo_match_field" contents. If there is a match the dynamo fields for the match will be added to the original event with the prefix DYNAMO_ . In addition the DYNAMO_MATCH field will be set to "true". If no match is found, the DYNAMO_MATCH field will be set to "false" and no further fields will be added>
+We are searching for events containing an email_address field in the dynamo index. We then pipe that output to the dynamoget command. The dynamoget command will run the query specified in the "query" field and attempt to match the contents from the "source" field with the "dynamo_match_field" contents. If there is a match the dynamo fields for the match will be added to the original event with the prefix DYNAMO_ . In addition the DYNAMO_MATCH field will be set to "true". If no match is found, the DYNAMO_MATCH field will be set to "false" and no further fields will be added>
 
 Example output can be seen below:
 
 ![alt text](https://github.com/bantex01/TA-dynamodb-get/blob/main/README/dynamoget_output.png?raw=true)
 
+### Accessing the DynamoDB table from the dynamoget command
+
+In order to query DynamoDB the dynamoget command requires AWS credentials. The "input" field tells the command what configured input to use to gather the credentials required.
+
+If you do not wish to use the dynamodb_get input to periodically collect and ingest DynamoDB data you will still need to configure an input in order to use the dynamoget custom command. In this scenario, configure the input for this purpose but leave it disabled.
