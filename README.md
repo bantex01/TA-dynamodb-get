@@ -38,5 +38,21 @@ Example:
 
 ## dynamoget Streaming Command Usage
 
+The dynamoget command supports the following command options:
+
+- Input - The name of the input to use to gather the needed credentials to access the DynamoDB table. 
+- Table - The table name you wish to query
+- Query - The query string you wish to use to gather data
+- Source field - The field to use in your search to match against a field in DynamoDB
+- Dynamo Match Field - The field in DynamoDB to match against the Source Field
+
+Example:
+
+> index=dynamo email_address=* | dynamoget region="us-east-1" input="us_east_1_health_id" table="health_id" query="table.query(IndexName = \"email-index\",KeyConditionExpression = Key(\"email\").eq(\"adalton@test.com\"))" source_field="email_address" dynamo_match_field="email" | table email_address, DYNAMO*
+
+We are searching for events containing an email_address field in the dynamo index. We then pipe that output to the dynamoget command. The custom command will run the query specified in the "query" field and attempt to match the contents from the "source" field with the "dynamo_match_field" contents. If there is a match the dynamo fields for the match will be added to the original event with the prefix DYNAMO_ . In addition the DYNAMO_MATCH field will be set to "true". If no match is found, the DYNAMO_MATCH field will be set to "false" and no further fields will be added>
+
+Example output can be seen below:
+
 ![alt text](https://github.com/bantex01/TA-dynamodb-get/blob/main/README/dynamoget_output.png?raw=true)
 
